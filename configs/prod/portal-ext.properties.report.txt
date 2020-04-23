@@ -1,0 +1,102 @@
+Checking the location for old properties in the new version
+-----------------------------------------------------------
+Following portal properties present an exception:
+	asset.categories.navigation.display.templates.config has been removed.  Overwrite the method in the ADT handler. See LPS-67466
+	asset.publisher.display.templates.config has been removed.  Overwrite the method in the ADT handler. See LPS-67466
+	asset.tags.navigation.display.templates.config has been removed.  Overwrite the method in the ADT handler. See LPS-67466
+	breadcrumb.display.style.default has been modularized.   ddmTemplateKeyDefault in com.liferay.site.navigation.breadcrumb.web.configuration.SiteNavigationBreadcrumbWebTemplateConfiguration. More information at Breaking Changes for Liferay 7: https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/breaking-changes#replaced-the-breadcrumb-portlets-display-styles-with-adts
+	breadcrumb.display.style.options has been removed.  Any DDM template as ddmTemplate_BREADCRUMB-HORIZONTAL-FTL can be used. More information at Breaking Changes for Liferay 7: https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/breaking-changes#replaced-the-breadcrumb-portlets-display-styles-with-adts
+
+Some properties have been moved to a module portlet.properties:
+	asset.browser.search.with.database can match with the following portlet properties:
+		search.with.database from osgi/marketplace/Liferay CE Web Experience - Liferay CE Asset - Impl.lpkg/com.liferay.asset.browser.web-3.0.12.jar/portlet.properties
+	asset.publisher.search.with.index can match with the following portlet properties:
+		search.with.database from osgi/marketplace/Liferay CE Web Experience - Liferay CE Asset - Impl.lpkg/com.liferay.asset.browser.web-3.0.12.jar/portlet.properties
+
+Properties moved to OSGI configuration:
+	asset.publisher.check.interval can match with the following OSGI properties:
+		checkInterval from com.liferay.asset.publisher.web.internal.configuration.AssetPublisherWebConfiguration
+	asset.publisher.display.style.default can match with the following OSGI properties:
+		defaultDisplayStyle from com.liferay.asset.publisher.web.internal.configuration.AssetPublisherPortletInstanceConfiguration
+	asset.publisher.display.styles can match with the following OSGI properties:
+		displayStyles from com.liferay.asset.publisher.web.internal.configuration.AssetPublisherPortletInstanceConfiguration
+	asset.publisher.dynamic.subscription.limit can match with the following OSGI properties:
+		dynamicSubscriptionLimit from com.liferay.asset.publisher.web.internal.configuration.AssetPublisherWebConfiguration
+	asset.publisher.email.asset.entry.added.body can match with the following OSGI properties:
+		emailAssetEntryAddedBody from com.liferay.asset.publisher.web.internal.configuration.AssetPublisherPortletInstanceConfiguration
+	asset.publisher.email.asset.entry.added.enabled can match with the following OSGI properties:
+		emailAssetEntryAddedEnabled from com.liferay.asset.publisher.web.internal.configuration.AssetPublisherPortletInstanceConfiguration
+	asset.publisher.email.asset.entry.added.subject can match with the following OSGI properties:
+		emailAssetEntryAddedSubject from com.liferay.asset.publisher.web.internal.configuration.AssetPublisherPortletInstanceConfiguration
+	asset.publisher.email.from.address can match with the following OSGI properties:
+		emailFromAddress from com.liferay.asset.publisher.web.internal.configuration.AssetPublisherPortletInstanceConfiguration
+	asset.publisher.email.from.name can match with the following OSGI properties:
+		emailFromName from com.liferay.asset.publisher.web.internal.configuration.AssetPublisherPortletInstanceConfiguration
+	asset.publisher.permission.checking.configurable can match with the following OSGI properties:
+		permissionCheckingConfigurable from com.liferay.asset.publisher.web.internal.configuration.AssetPublisherWebConfiguration
+	blogs.display.templates.config can match with the following OSGI properties:
+		displayTemplatesConfig from com.liferay.blogs.configuration.BlogsConfiguration
+	blogs.entry.check.interval can match with the following OSGI properties:
+		entryCheckInterval from com.liferay.blogs.configuration.BlogsConfiguration
+	blogs.image.extensions can match with the following OSGI properties:
+		imageExtensions from com.liferay.blogs.configuration.BlogsFileUploadsConfiguration
+	blogs.image.small.max.size can match with the following OSGI properties:
+		imageMaxSize from com.liferay.adaptive.media.image.internal.configuration.AMImageConfiguration
+		imageMaxSize from com.liferay.blogs.configuration.BlogsFileUploadsConfiguration
+	blogs.linkback.job.interval can match with the following OSGI properties:
+		linkbackJobInterval from com.liferay.blogs.configuration.BlogsConfiguration
+	breadcrumb.display.style.default can match with the following OSGI properties:
+		displayStyleGroupId from com.liferay.site.navigation.breadcrumb.web.internal.configuration.SiteNavigationBreadcrumbPortletInstanceConfiguration
+		displayStyle from com.liferay.site.navigation.breadcrumb.web.internal.configuration.SiteNavigationBreadcrumbPortletInstanceConfiguration
+	breadcrumb.display.style.options can match with the following OSGI properties:
+		displayStyleGroupId from com.liferay.site.navigation.breadcrumb.web.internal.configuration.SiteNavigationBreadcrumbPortletInstanceConfiguration
+		displayStyle from com.liferay.site.navigation.breadcrumb.web.internal.configuration.SiteNavigationBreadcrumbPortletInstanceConfiguration
+	breadcrumb.show.guest.group can match with the following OSGI properties:
+		showGuestGroup from com.liferay.site.navigation.breadcrumb.web.internal.configuration.SiteNavigationBreadcrumbPortletInstanceConfiguration
+	breadcrumb.show.parent.groups can match with the following OSGI properties:
+		showParentGroups from com.liferay.site.navigation.breadcrumb.web.internal.configuration.SiteNavigationBreadcrumbPortletInstanceConfiguration
+
+We have not found a new property for the following old properties (check if you still need them or check the documentation to find a replacement):
+	asset.entry.validator
+	asset.publisher.asset.entry.query.processors
+	asset.publisher.filter.unlistable.entries
+	asset.publisher.query.form.configuration
+	asset.tag.permissions.enabled
+	asset.tag.properties.default
+	asset.tag.properties.enabled
+	asset.tag.suggestions.enabled
+	bookmarks.email.entry.added.body
+	bookmarks.email.entry.added.enabled
+	bookmarks.email.entry.added.subject
+	bookmarks.email.entry.updated.body
+	bookmarks.email.entry.updated.enabled
+	bookmarks.email.entry.updated.subject
+	bookmarks.email.from.address
+	bookmarks.email.from.name
+	bookmarks.publish.to.live.by.default
+
+The following properties still exist in the new portal.properties:
+	asset.categories.properties.default
+	asset.categories.search.hierarchical
+	asset.categories.selector.max.entries
+	asset.filter.search.limit
+	asset.vocabulary.default
+	blogs.email.entry.added.body
+	blogs.email.entry.added.enabled
+	blogs.email.entry.added.subject
+	blogs.email.entry.updated.body
+	blogs.email.entry.updated.enabled
+	blogs.email.entry.updated.subject
+	blogs.email.from.address
+	blogs.email.from.name
+	blogs.entry.comments.enabled
+	blogs.entry.page.delta.values
+	blogs.entry.previous.and.next.navigation.enabled
+	blogs.linkback.excerpt.length
+	blogs.page.abstract.length
+	blogs.ping.google.enabled
+	blogs.pingback.enabled
+	blogs.publish.to.live.by.default
+	blogs.rss.abstract.length
+	blogs.trackback.enabled
+	calendar.publish.to.live.by.default
