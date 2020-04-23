@@ -3,7 +3,7 @@ package unsafe.portlet.portlet;
 import unsafe.portlet.constants.UnsafePortletKeys;
 
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
-import com.liferay.portal.kernel.util.UnsafeRunnable;
+import com.liferay.petra.function.UnsafeRunnable;
 
 import java.io.IOException;
 
