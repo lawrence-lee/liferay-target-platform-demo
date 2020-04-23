@@ -1,0 +1,8 @@
+Checking the location for old properties in the new version
+-----------------------------------------------------------
+
+
+
+We have not found a new property for the following old properties (check if you still need them or check the documentation to find a replacement):
+
+The following properties still exist in the new portal.properties:
