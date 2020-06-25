@@ -1,5 +1,6 @@
 dependencies {
 	targetPlatformBoms group: "com.liferay", name: "workspace-bom", version: "1.0.0"
+    providedModules group: 'com.google.guava', name: 'guava'
 }
 
 allprojects {
